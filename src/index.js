@@ -11,7 +11,7 @@ app.use(express.static('./src/public'))
 app.engine('hbs', handlebars.engine({
     extname: 'hbs',
 }));
- 
+
 //Set default engine
 app.set('view engine', 'hbs');
 
@@ -22,6 +22,9 @@ app.set('views', './src/views')
 app.get('/', (req, res) => {
     res.render('home', { layout: false });
 });
+app.get('/about', (req, res) => {
+    res.render('about', { layout: false });
+})
 
 //Start express web server 
 app.listen(5000, () => console.log('Server is listening on http://localhost:5000....'))

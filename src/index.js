@@ -8,9 +8,12 @@ const app = express();
 app.engine('hbs', handlebars.engine({
     extname: 'hbs',
 }));
-
+ 
 //Set default engine
 app.set('view engine', 'hbs');
+
+//Set default view folder
+app.set('views', './src/views')
 
 // Config routes
 app.get('/', (req, res) => {

@@ -1,0 +1,21 @@
+{
+  "name": "movie-magic-expressjs",
+  "version": "1.0.0",
+  "description": "Back End Course Workshop",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vvvenkov/movie-magic-expressJS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vvvenkov/movie-magic-expressJS/issues"
+  },
+  "homepage": "https://github.com/vvvenkov/movie-magic-expressJS#readme"
+}

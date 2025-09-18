@@ -14,8 +14,13 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "type": "module",
   "bugs": {
     "url": "https://github.com/vvvenkov/movie-magic-expressJS/issues"
   },
-  "homepage": "https://github.com/vvvenkov/movie-magic-expressJS#readme"
+  "homepage": "https://github.com/vvvenkov/movie-magic-expressJS#readme",
+  "dependencies": {
+    "express": "^5.1.0",
+    "express-handlebars": "^8.0.3"
+  }
 }

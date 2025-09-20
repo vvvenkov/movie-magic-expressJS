@@ -1,3 +1,5 @@
+import { v4 as uuid } from 'uuid'; //generates unique IDs
+
 const movies = [
     {
         "id": "a3682672-0ee4-1284-8759-35ee253329zv",
@@ -38,10 +40,13 @@ export default {
         return movies;
     },
     create(movieData) {
-        // TODO: set unique id
+        //generate unique movie Id
+        movieData.id = uuid();
 
+        //Add movie to movies
         movies.push(movieData)
 
+        //return created movie
         return movieData;
     },
     getOne(movieId) {

@@ -17,6 +17,11 @@ app.use(express.urlencoded());
 // Add a config view engine
 app.engine('hbs', handlebars.engine({
     extname: 'hbs',
+    helpers: {
+        showRating(rating) {
+            return '&#x2605;'.repeat(Math.floor(rating));
+        }
+    }
 }));
 
 //Set default engine

@@ -57,6 +57,8 @@ export default {
         //generate unique movie Id
         movieData.id = uuid();
 
+        movieData.rating = Number(movieData.rating)
+
         //Add movie to movies
         movies.push(movieData)
 

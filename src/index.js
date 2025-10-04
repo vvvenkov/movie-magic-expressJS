@@ -4,7 +4,6 @@ import handlebars from 'express-handlebars';
 import homeController from './controllers/homeController.js';
 import movieController from './controllers/movieController.js';
 
-
 // Init express instance
 const app = express();
 

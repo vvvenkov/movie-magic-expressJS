@@ -20,7 +20,7 @@ movieController.post('/create', async (req, res) => {
 movieController.get('/:movieId/details', (req, res) => {
     // Get movie id from params
     const movieId = req.params.movieId;
-    
+
     // Get movie data
     const movie = movieService.getOne(movieId);
 
@@ -30,11 +30,11 @@ movieController.get('/:movieId/details', (req, res) => {
 movieController.get('/search', (req, res) => {
     // Get querystring
     const filter = req.query;
-    
+
     // Get all movies
     const movies = movieService.getAll(filter);
 
-    res.render('search', { movies });
+    res.render('search', { movies, filter });
 });
 
 export default movieController;

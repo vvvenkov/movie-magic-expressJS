@@ -21,6 +21,11 @@ app.engine('hbs', handlebars.engine({
         showRating(rating) {
             return '&#x2605;'.repeat(Math.floor(rating));
         }
+    },
+    //Allow mognosse to use prototype methods and properties of the base document
+    runtimeOptions: {
+        allowProtoPropertiesByDefault: 'true',
+        allowProtoMethodsByDefault: 'true',
     }
 }));
 

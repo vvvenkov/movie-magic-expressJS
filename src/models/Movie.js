@@ -15,6 +15,7 @@ const movieSchema = new Schema({
     genre: {
         type: String,
         required: [true, 'imageUrl is required!'],
+        lowerCase: true, //not a validator, but a sanitizer
     },
     director: {
         type: String,

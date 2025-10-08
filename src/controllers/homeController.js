@@ -14,15 +14,5 @@ homeController.get('/about', (req, res) => {
     res.render('about');
 });
 
-movieController.post('/:movieId/attach', async (req, res) => {
-    // Get movie id 
-    const movieId = req.params.movieId;
-
-    // Get cast id 
-    const castId = req.body.cast;
-
-    // Attach cast to movie
-    
-})
 
 export default homeController;

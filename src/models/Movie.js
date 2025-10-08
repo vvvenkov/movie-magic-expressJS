@@ -1,4 +1,4 @@
-import { Schema, model } from 'mongoose';
+import { Schema, model, Types } from 'mongoose';
 
 const maxYearAllowed = new Date().getFullYear() + 5;
 
@@ -40,8 +40,12 @@ const movieSchema = new Schema({
     description: {
         type: String,
         required: [true, 'imageUrl is required!'],
-        maxLength: [100, 'Description is too long!'],
+        maxLength: [1000, 'Description is too long!'],
     },
+    casts: [{
+        type: Types.ObjectId,
+        ref: 'Cast',
+    }],
 });
 
 const Movie = model('Movie', movieSchema);

@@ -30,4 +30,11 @@ export default {
 
         return movie;
     },
+    async attach(movieId, castId) {
+        const movie = await this.getOne(movieId);
+        
+        movie.casts.push(castId);
+
+        return movie.save();
+    }
 }

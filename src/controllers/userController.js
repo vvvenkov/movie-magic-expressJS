@@ -18,4 +18,8 @@ userController.post('/register', async (req, res) => {
     res.redirect('/users/login')
 });
 
+userController.get('/login', (req, res) => {
+    res.render('user/login');
+});
+
 export default userController;

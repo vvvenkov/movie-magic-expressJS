@@ -22,4 +22,16 @@ userController.get('/login', (req, res) => {
     res.render('user/login');
 });
 
+userController.post('/login', async (req, res) => {
+    //Get login data
+    const loginData = req.body;
+
+    //Call service login
+    const token = await userService.login(loginData);
+
+    //set auth cookie
+
+    res.redirect('/');
+});
+
 export default userController;

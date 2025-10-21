@@ -29,7 +29,10 @@ userController.post('/login', async (req, res) => {
     //Call service login
     const token = await userService.login(email, password);
 
-    //set auth cookie
+    //Set auth cookie
+    res.cookie('auth', token);
+
+    //redirect to home
     res.redirect('/');
 });
 

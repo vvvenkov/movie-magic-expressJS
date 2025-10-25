@@ -10,9 +10,12 @@ export const auth = (req, res, next) => {
 
     try {
         const decodedToken = jsonwebtoken.verify(token, jwtSecret)
+
+        req.user = decodedToken;
+
         next();
     } catch (err) {
         res.clearCookie('auth');
-        res.redirec('/users/login');
+        res.redirect('/users/login');
     }
 }; 

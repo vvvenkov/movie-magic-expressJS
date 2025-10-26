@@ -9,10 +9,14 @@ movieController.get('/create', (req, res) => {
 });
 
 movieController.post('/create', async (req, res) => {
+    //Get current userId
+    const userId = req.user.id;
+    
+    //Get movie data
     const newMovie = req.body;
 
     // Save Movie
-    await movieService.create(newMovie);
+    await movieService.create(newMovie, userId);
 
     // Redirect to home page
     res.redirect('/');
@@ -22,13 +26,16 @@ movieController.get('/:movieId/details', async (req, res) => {
     // Get movie id from params
     const movieId = req.params.movieId;
 
-    // Get movie data
+    // Get current user 
+    const userId = req.user?.id;
+
+    // Get movie data with populated casts
     const movie = await movieService.getOne(movieId);
 
-    //Get movie cast
-    // const casts = await movieService.getCasts(movieId);
+    //Verify is the user is owner
+    const isOwner = movie.owner?.equals(userId);
 
-    res.render('movie/details', { movie });
+    res.render('movie/details', { movie, isOwner });
 });
 
 movieController.get('/search', async (req, res) => {

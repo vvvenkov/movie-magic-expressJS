@@ -11,7 +11,7 @@ movieController.get('/create', (req, res) => {
 movieController.post('/create', async (req, res) => {
     //Get current userId
     const userId = req.user.id;
-    
+
     //Get movie data
     const newMovie = req.body;
 
@@ -75,5 +75,17 @@ movieController.post('/:movieId/attach', async (req, res) => {
     //Redirect to movie details page
     res.redirect(`/movies/${movieId}/details`);
 })
+
+movieController.get('/:movieId/delete', async (req, res) => {
+    // Get movie id
+    const movieId = req.params.movieId;
+
+    // Call service
+    await movieService.delete(movieId);
+    // return redirect
+
+    res.redirect('/')
+
+});
 
 export default movieController;

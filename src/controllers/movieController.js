@@ -59,7 +59,7 @@ movieController.get('/:movieId/attach', async (req, res) => {
     const casts = await castService.getAll({ exclude: movie.casts })
 
     //Pass casts to template
-    res.render('movie/attach', { movie, casts });
+    res.render('movie/attach', { movie, casts, pageTitle: 'Attach' });
 });
 
 
@@ -110,7 +110,11 @@ movieController.get("/:movieId/edit", async (req, res) => {
     const getCategoryOptionViewData = getCategoryOptionsViewData(movie.category);
     //Pass movie data to template
 
-    res.render("movie/edit", { movie, categoryOptions: getCategoryOptionViewData })
+    res.render("movie/edit", {
+        movie,
+        categoryOptions: getCategoryOptionViewData,
+        pageTitle: 'Edit'
+    })
 });
 
 movieController.post('/:movieId/edit', async (req, res) => {

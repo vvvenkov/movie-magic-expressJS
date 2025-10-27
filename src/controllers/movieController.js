@@ -95,7 +95,13 @@ movieController.get("/:movieId/edit", async (req, res) => {
     // Get movie by id
     const movie = await movieService.getOne(movieId);
 
-    //TODO: Check if owner
+    //Check if owner
+    const isOwner = movie.owner?.equals(movieId);
+
+    if(!isOwner){
+        //TODO: add errro handlign
+        return res.status(403).end();
+    }
 
     //Pass movie data to template
 

@@ -11,4 +11,5 @@ Back End Course Workshop
 - [x] SHoe dynamic title 
 - [x] Route guard
 - [x] Auto login on register
-
+- [x] DB movies filtering
+- [x] Filter already attached cast

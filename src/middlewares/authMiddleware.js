@@ -19,4 +19,12 @@ export const auth = (req, res, next) => {
         res.clearCookie('auth');
         res.redirect('/users/login');
     }
-}; 
+};
+
+export const isAuth = (req, res, next) => {
+    if (!req.user) {
+        return res.redirect('/users/login')
+    }
+
+    next();
+}

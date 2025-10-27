@@ -1,6 +1,7 @@
 import express from 'express'
 import movieService from '../services/movieService.js';
 import castService from '../services/castService.js';
+import { getCategoryOptionsViewData } from '../utils/movieUtils.js';
 
 const movieController = express.Router();
 
@@ -106,9 +107,10 @@ movieController.get("/:movieId/edit", async (req, res) => {
         return res.status(403).end();
     }
 
+    const getCategoryOptionViewData = getCategoryOptionsViewData(movie.category);
     //Pass movie data to template
 
-    res.render("movie/edit", { movie })
+    res.render("movie/edit", { movie, categoryOptions: getCategoryOptionViewData })
 });
 
 movieController.post('/:movieId/edit', async (req, res) => {

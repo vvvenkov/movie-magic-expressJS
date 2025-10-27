@@ -10,5 +10,5 @@ Back End Course Workshop
 - [x] Select category in edit
 - [x] SHoe dynamic title 
 - [x] Route guard
-- [] Auto login on register
+- [x] Auto login on register
 

@@ -11,6 +11,9 @@ userController.post('/register', async (req, res) => {
     // Get data from request
     const { email, password, rePassword } = req.body;
 
+    //Password validation 
+    
+
     //Register user
     const token = await userService.register({ email, password, rePassword })
 

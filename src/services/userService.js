@@ -23,14 +23,14 @@ export default {
 
         // Check if user exists
         if (!user) {
-            return new Error('No such user exists!')
+            throw new Error('No such user exists!')
         }
         // Validate password
         const isValid = await bcrypt.compare(password, user.password);
 
         // Return error if not 
         if (!isValid) {
-            return new Error('Invalid password');
+            throw new Error('Invalid password');
         }
         // If valid generate token
         const token = generateToken(user);

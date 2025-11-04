@@ -54,7 +54,7 @@ app.engine('hbs', handlebars.engine({
 
 //Connect database
 try {
-    await mongoose.connect('mongodb://localhost:27017', { dbName: 'movie-express' });
+    await mongoose.connect('mongodb+srv://venelinvenkov_db_user:<db password>@cluster0.uynvyhn.mongodb.net/', { dbName: 'movie-express' });
     console.log('Successfully connected to database.')
 } catch (err) {
     console.log('Cannot connect to database');

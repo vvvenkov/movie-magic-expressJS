@@ -40,6 +40,9 @@ app.engine('hbs', handlebars.engine({
     helpers: {
         showRating(rating) {
             return '&#x2605;'.repeat(Math.floor(rating));
+        },
+        setTitle(title) {
+            this.pageTitle = title;
         }
     },
     //Allow mognosse to use prototype methods and properties of the base document

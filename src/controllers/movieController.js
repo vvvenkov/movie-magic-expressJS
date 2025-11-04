@@ -116,7 +116,7 @@ movieController.get("/:movieId/edit", isAuth, async (req, res) => {
 
     if (!isOwner) {
         //TODO: add errro handlign
-        return res.status(403).end();
+        return res.dataRedirect('/404', { error: 'You don\'t have access to edit this movie' })
     }
 
     const getCategoryOptionViewData = getCategoryOptionsViewData(movie.category);
